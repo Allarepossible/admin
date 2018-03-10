@@ -1,0 +1,94 @@
+extends ~Layouts/base/l-base
+
+include ~Components/menu/m-menu
+include ~Components/parallax/m-parallax
+include ~Components/ribbon/m-ribbon
+include ~Components/indicators-grid/m-indicators-grid
+
+block title
+    | About
+
+block head
+
+block content
+    .page-about
+        .page-about__parallax
+            +parallax({
+                heading: 'Владимир Астахов',
+                text: 'Личный сайт веб разработчика',
+                anchorLink: '#page-body'
+            })
+
+        .page-about__ribbon
+            +ribbon({
+                elClasses: ['ribbon_theme_striped']
+            })
+
+        section#page-body.page-about__body
+            section.page-about__info
+                include ~Components/about/c-about
+
+            section.page-about__techs
+                include ~Components/techs/c-techs
+
+                .page-about__indicators
+                    +indicatorsGrid({
+                        groups: [
+                            {
+                                title: 'Frontend',
+                                items: {
+                                    'HTML': 20,
+                                    'CSS3': 40,
+                                    'JavaScript & jQuery': 60
+                                }
+                            },
+                            {
+                                title: 'Backend',
+                                items: {
+                                    'PHP': 80,
+                                    'mySQL': 95,
+                                    'Node.js & npm': 80,
+                                    'Mongo.db': 50
+                                }
+                            },
+                            {
+                                title: 'WorkFlow',
+                                items: {
+                                    'Git': 40,
+                                    'Gulp': 5,
+                                    'Bower': 77
+                                }
+                            }
+                        ]
+                    })
+
+        section.page-about__bottom
+            .page-about__contacts
+                include ~Components/panel-contacts/c-panel-contacts
+
+            .page-about__map
+                .map
+
+
+block menu
+    +menu({
+        items: [
+            {
+                text: 'Мои работы',
+                link: 'works.html'
+            },
+            {
+                text: 'Блог',
+                link: 'blog.html'
+            },
+            {
+                text: 'Обо мне',
+                link: 'about.html',
+                active: true
+            },
+            {
+                text: 'Авторизация',
+                link: '/'
+            }
+        ]
+    })

@@ -1,0 +1,50 @@
+extends ~Layouts/base/l-base
+
+include ~Components/menu/m-menu
+include ~Components/parallax/m-parallax
+include ~Components/ribbon/m-ribbon
+
+block title
+    | Blog
+
+block head
+
+block content
+    .page-blog
+        .page-blog__parallax
+            +parallax({
+                elClasses: ['parallax_type_inner-pages'],
+                heading: 'Блог',
+                text: 'Статьи, которые я написал',
+                anchorLink: '#page-body'
+            })
+
+        .page-blog__ribbon
+            +ribbon({})
+
+        #page-body.page-blog__body
+            include ~Components/blog/c-blog
+
+
+block menu
+    +menu({
+        items: [
+            {
+                text: 'Мои работы',
+                link: 'works.html'
+            },
+            {
+                text: 'Блог',
+                link: 'blog.html',
+                active: true
+            },
+            {
+                text: 'Обо мне',
+                link: 'about.html'
+            },
+            {
+                text: 'Авторизация',
+                link: '/'
+            }
+        ]
+    })

@@ -1,0 +1,31 @@
+@import 'params';
+@import 'mixins';
+@import '~Fonts/style';
+
+* {
+    box-sizing: border-box;
+
+    &:focus {
+        outline: 0 none;
+    }
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-width: 320px;
+    height: 100%;
+    color: #474b57;
+    font-size: $fs-base;
+    font-family: 'Roboto', sans-serif;
+    line-height: 24px;
+    position: relative;
+}
+
+button {
+    margin: 0;
+    outline: 0 none;
+    font-family: 'Roboto', sans-serif;
+}

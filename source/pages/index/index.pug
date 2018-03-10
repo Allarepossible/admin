@@ -1,0 +1,26 @@
+extends ~Layouts/preloader/l-preloader
+
+include ~Components/btn/m-btn
+include ~Components/copyright/m-copyright
+
+block title
+    | Welcome
+
+block content
+    .page-welcome
+        .page-welcome__background
+            include ~Components/background/c-background
+
+        .page-welcome__top
+            +btn({
+                text: 'Авторизоваться',
+                elClasses: ['btn_color_glass-white', 'btn_size_large', 'panel-welcome-toggler']
+            })
+
+        .page-welcome__flip-panel
+            include ~Components/panel-welcome/c-panel-welcome
+
+        .page-welcome__copyright
+            +copyright({
+                elClasses: ['copyright_color_white']
+            })
